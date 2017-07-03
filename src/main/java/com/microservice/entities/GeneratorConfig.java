@@ -2,10 +2,17 @@ package com.microservice.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class GeneratorConfig {
 	
+	
+	@Column(name = "plantID" ,unique = true, nullable = false)
+	@Id@GeneratedValue(strategy = GenerationType.AUTO)
+	private int plantID;
 
 	@Column(name = "plantName" ,length=50)
 	private String plantName;
